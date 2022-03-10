@@ -6,9 +6,10 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 17:29:08 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/01/02 17:29:47 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:22:06 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *str)

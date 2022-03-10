@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 11:41:11 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/10 17:53:00 by aniezgod         ###   ########.fr       */
+/*   Created: 2022/03/10 16:22:25 by aniezgod          #+#    #+#             */
+/*   Updated: 2022/03/10 16:22:43 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-
-#include <stdlib.h>
 #include "libft.h"
 
-typedef struct s_lst
+long	ft_atol(const char *str)
 {
-    int nb;
-    struct s_lst *next;
-}   t_lst;
+	int	    i;
+	int     compteur;
+	long	number;
 
-int     ft_check(char *str);
-void    ft_error(void);
-int     ft_check_int(char **str);
-char    *arg_join(char **argv);
-t_lst	*ft_lstnext(int content);
-void    ft_create_lst(char **tab, t_lst **a);
-
-#endif
+	i = 0;
+	compteur = 1;
+	number = 0;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			compteur = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9' && str[i])
+	{
+		number = number * 10 + (str[i] - 48);
+		i++;
+	}
+	return (number * compteur);
+}

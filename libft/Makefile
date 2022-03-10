@@ -6,7 +6,7 @@
 #    By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/02 19:11:10 by aniezgod          #+#    #+#              #
-#    Updated: 2022/03/08 16:52:43 by aniezgod         ###   ########.fr        #
+#    Updated: 2022/03/10 16:23:42 by aniezgod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRCS =	./srcs/ft_isalpha.c \
 		./srcs/ft_lstdelone.c \
 		./srcs/ft_lstclear.c \
 		./srcs/ft_lstiter.c \
+		./srcs/ft_atol.c \
 
 OBJS = ${SRCS:.c=.o}
 			
