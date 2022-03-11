@@ -6,7 +6,7 @@
 #    By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/02 19:11:10 by aniezgod          #+#    #+#              #
-#    Updated: 2022/03/10 16:23:42 by aniezgod         ###   ########.fr        #
+#    Updated: 2022/03/11 21:38:10 by aniezgod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,16 +68,16 @@ INCS = includes
 all: ${NAME}
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${INCS}
+			@${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${INCS}
 
-$(NAME): $(OBJS) 
-			ar -rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+			@ar -rcs $(NAME) $(OBJS)
 
 clean:
-			${RM} ${OBJS}
+			@${RM} ${OBJS}
 
 fclean: clean
-			${RM} ${NAME}
+			@${RM} ${NAME}
 
 re: fclean all
 

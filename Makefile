@@ -6,9 +6,24 @@
 #    By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/08 16:25:39 by aniezgod          #+#    #+#              #
-#    Updated: 2022/03/11 13:25:21 by aniezgod         ###   ########.fr        #
+#    Updated: 2022/03/11 21:36:17 by aniezgod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+## ----------------------------------COLORS------------------------------------#
+
+BOLD=$'\x1b[1m
+END=$'\x1b[0m
+UNDER=$'\x1b[4m
+REV=$'\x1b[7m
+GREY=$'\x1b[30m
+RED=$'\x1b[31m
+GREEN=$'\x1b[32m
+YELLOW=$'\x1b[33m
+BLUE=$'\x1b[34m
+PURPLE=$'\x1b[35m
+CYAN=$'\x1b[36m
+WHITE=$'\x1b[37m
 
 SRCS =	./srcs/push_swap.c \
 		./srcs/ft_check.c \
@@ -25,19 +40,27 @@ INCS = -I ./includes -I ./libft/includes/
 all: ${NAME}
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} ${INCS}
+			@${CC} ${CFLAGS} -c $< -o ${<:.c=.o} ${INCS}
 
 $(NAME): $(OBJS)
-			${MAKE} -C ./libft
-			gcc ${CFLAGS} -o $(NAME) $(OBJS) ${INCS} libft/libft.a
+			@printf "${WHITE}${BOLD}╔════════════════════════════════════════════════════════════════════════════╗\n"
+			@printf "${BOLD}║                              .: COMPILATION :.                             ║\n"
+			@printf "${BOLD}╚════════════════════════════════════════════════════════════════════════════╝\n"
+			@${MAKE} -C ./libft
+			@printf "${BOLD}║                                    ${PURPLE}libft                                   ${WHITE}║\n"
+			@gcc ${CFLAGS} -o $(NAME) $(OBJS) ${INCS} libft/libft.a
+			@printf "${BOLD}║                                  ${PURPLE}${NAME}                                 ${WHITE}║\n"
+			@printf "${BOLD}╚════════════════════════════════════════════════════════════════════════════╝\n"
 
 clean:
-			${RM} ${OBJS}
-			${MAKE} -C libft clean 
+			@${RM} ${OBJS}
+			@${MAKE} -C libft clean 
 			
 fclean: clean
-			${RM} ${NAME}
-			${MAKE} -C libft fclean
+			@printf "${BOLD}Entreprise de nettoyage bonjour ?\n"
+			@${RM} ${NAME}
+			@${MAKE} -C libft fclean
+			@printf "${BOLD}${GREEN}Tout est propre !✨\n"
 
 re: fclean all
 
