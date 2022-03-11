@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:22:25 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/10 16:22:43 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/11 14:40:34 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	ft_atol(const char *str)
 {
-	int	    i;
-	int     compteur;
+	int		i;
+	int		compteur;
 	long	number;
 
 	i = 0;

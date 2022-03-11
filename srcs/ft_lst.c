@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:18:05 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/10 17:52:53 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/11 14:52:09 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,18 @@ void	ft_lstadd_back2(t_lst **a, t_lst *new)
 	last_element->next = new;
 }
 
-void    ft_create_lst(char **tab, t_lst **a)
+void	ft_create_lst(char **tab, t_lst **a)
 {
-    int i;
-    int nb;
-    t_lst  *next;
+	int		i;
+	int		nb;
+	t_lst	*next;
 
-    i = 0;
-    while (tab[i])
-    {
-        nb = ft_atol(tab[i]);
-        next = ft_lstnext(nb);
-        ft_lstadd_back2(a, next);
-        i++;
-    }
+	i = 0;
+	while (tab[i])
+	{
+		nb = ft_atol(tab[i]);
+		next = ft_lstnext(nb);
+		ft_lstadd_back2(a, next);
+		i++;
+	}
 }
