@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:14:19 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/02/20 00:24:38 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/12 21:33:03 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last_element;
+	t_list	*tmp;
 
-	last_element = ft_lstlast (*lst);
-	if (last_element == NULL)
-		last_element = new;
-	last_element->next = new;
+	tmp = (*lst);
+	if(!tmp)
+		(*lst) = new;
+	while(tmp)
+	{
+		if(tmp->next == NULL)
+		{
+			tmp->next = new;
+			return ;
+		}
+		tmp = tmp->next;
+	}
 }

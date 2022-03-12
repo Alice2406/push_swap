@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/11 15:02:32 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/12 22:04:05 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,45 @@ void	ft_error(void)
 	ft_printf("Error\n");
 }
 
+void	ft_print_lst(t_lst **a)
+{
+	t_lst *tmp;
+	tmp = *a;
+	while(tmp)
+	{
+		if(!tmp->next)
+		{
+			ft_putnbr_fd((tmp->nb), 1);		
+			return ;
+		}
+		else
+		{
+			ft_putnbr_fd((tmp->nb), 1);
+			ft_printf(" ");
+			tmp = tmp->next;
+		}
+	}
+}
+
+int	ft_lstsize_ps(t_lst *lst)
+{
+	int	size;
+
+	size = 0;
+	while (lst)
+	{
+		size++;
+		lst = lst->next;
+	}
+	return (size);
+}
+
 int	main(int argc, char **argv)
 {
 	char	**tab2;
 	int		i;
 	t_lst	*a;
 //	t_lst	*b;
-	t_lst	*tmp;
 
 	i = 0;
 	if (argc < 2 || ft_check(arg_join(argv)) == 0)
@@ -41,14 +73,10 @@ int	main(int argc, char **argv)
 		}
 		else
 		{
-		//	ft_printf("%s\n", arg_join(argv));
-			ft_create_lst(tab2, &a);
-			tmp = a;
-			while (tmp->next != NULL)
-			{
-				ft_putnbr_fd(1, tmp->nb);
-				tmp = a->next;
-			}
+			if(ft_create_lst(tab2, &a) == 0)
+				return (0);
+			ft_printf("%d\n", ft_lstsize_ps(a));
+			ft_print_lst(&a);
 		}
 	}
 }

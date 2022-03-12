@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:18:05 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:09 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/12 22:15:37 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,31 @@ t_lst	*ft_lstlast2(t_lst *lst)
 	return (NULL);
 }
 
-void	ft_lstadd_back2(t_lst **a, t_lst *new)
+int	ft_lstadd_back2(t_lst **lst, t_lst *new)
 {
-	t_lst	*last_element;
+	t_lst	*tmp;
 
-	last_element = ft_lstlast2(*a);
-	if (last_element == NULL)
-		last_element = new;
-	last_element->next = new;
+	tmp = (*lst);
+	if(!tmp)
+		(*lst) = new;
+	while(tmp)
+	{
+		if (tmp->nb == new->nb)
+		{
+			ft_error();
+			return (0);
+		}
+		else if(tmp->next == NULL)
+		{
+			tmp->next = new;
+			return (1);
+		}
+		tmp = tmp->next;
+	}
+	return (1);
 }
 
-void	ft_create_lst(char **tab, t_lst **a)
+int	ft_create_lst(char **tab, t_lst **a)
 {
 	int		i;
 	int		nb;
@@ -56,7 +70,9 @@ void	ft_create_lst(char **tab, t_lst **a)
 	{
 		nb = ft_atol(tab[i]);
 		next = ft_lstnext(nb);
-		ft_lstadd_back2(a, next);
+		if(ft_lstadd_back2(a, next) == 0)
+			return (0);
 		i++;
 	}
+	return (1);
 }
