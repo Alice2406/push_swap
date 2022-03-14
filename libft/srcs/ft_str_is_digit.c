@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_str_is_digit.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/19 22:20:22 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/14 15:02:22 by aniezgod         ###   ########.fr       */
+/*   Created: 2022/03/14 12:55:42 by aniezgod          #+#    #+#             */
+/*   Updated: 2022/03/14 14:19:28 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+int ft_str_is_digit(char *str)
 {
-	if (lst)
-	{
-		del(lst->content);
-		free (lst);
-	}
+    int i;
+
+    i = 0;
+    while(str[i])
+    {
+        if ((str[i] == '+' || str[i] == '-') && i == 0)
+            i++;
+        else if (!ft_isdigit(str[i]))
+            return (0);
+        i++;
+    }
+    return (1);
 }

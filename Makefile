@@ -6,7 +6,7 @@
 #    By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/08 16:25:39 by aniezgod          #+#    #+#              #
-#    Updated: 2022/03/11 21:36:17 by aniezgod         ###   ########.fr        #
+#    Updated: 2022/03/14 15:34:19 by aniezgod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,10 @@ WHITE=$'\x1b[37m
 SRCS =	./srcs/push_swap.c \
 		./srcs/ft_check.c \
 		./srcs/ft_lst.c \
+		./srcs/ft_ope_a.c \
+		./srcs/ft_ope_b.c \
+		./srcs/ft_ope_a_and_b.c \
+		./srcs/ft_lst2.c \
 
 OBJS = ${SRCS:.c=.o}
 

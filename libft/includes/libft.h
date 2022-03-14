@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 18:12:05 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/12 20:33:36 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/14 12:59:12 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "ft_printf.h"
 
 typedef struct s_list
@@ -67,5 +68,6 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 long			ft_atol(const char *str);
+int				ft_str_is_digit(char *str);
 
 #endif

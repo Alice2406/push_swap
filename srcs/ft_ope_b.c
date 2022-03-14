@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_ope_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/19 22:20:22 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/14 15:02:22 by aniezgod         ###   ########.fr       */
+/*   Created: 2022/03/14 14:26:24 by aniezgod          #+#    #+#             */
+/*   Updated: 2022/03/14 15:36:31 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void    ft_swap_b(t_lst **b)
 {
-	if (lst)
-	{
-		del(lst->content);
-		free (lst);
-	}
+    t_lst *tmp;
+
+    if (ft_lstsize_ps(*b) < 2)
+        return ;
+    tmp = (*b)->next;
+    (*b)->next = tmp->next;
+    tmp->next = (*b);
+    (*b) = tmp;
+}
+
+void ft_push_b(t_lst **a, t_lst **b)
+{
+    if (ft_lstsize_ps(*a) == 0)
+        return ;
+    ft_lstadd_front2(b, (*a)->nb);
+    ft_lst_del_first(a);
 }

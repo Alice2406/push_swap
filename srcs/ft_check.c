@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:03:31 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/11 14:51:00 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/14 14:20:53 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	ft_check_int(char **str)
 	i = 0;
 	while (str[i])
 	{
+		if(!ft_str_is_digit(str[i]))
+			return (0);
 		j = 0;
 		while (str[i][j])
 		{
@@ -47,7 +49,7 @@ int	ft_check_int(char **str)
 			j++;
 		}
 		nb = ft_atol(str[i]);
-		if (nb > 2147483647 || nb < -2147483648)
+		if (nb > INT_MAX || nb < INT_MIN)
 			return (0);
 		i++;
 	}
