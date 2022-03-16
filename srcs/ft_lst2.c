@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:33:07 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/14 15:33:38 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/16 12:45:24 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,21 @@ void	ft_lst_del_first(t_lst **lst)
 		*lst = (*lst)->next;
 	else
 		*lst = NULL;
+}
+
+void	ft_lst_del_last(t_lst **lst)
+{
+	int		i;
+	int		size;
+	t_lst	*tmp;
+
+	size = ft_lstsize_ps(*lst);
+	i = 1;
+	tmp = (*lst);
+	while (i < size - 1)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	tmp->next = NULL;
 }

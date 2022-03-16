@@ -6,28 +6,23 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/14 15:17:57 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/16 12:43:30 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void)
-{
-	ft_printf("Error\n");
-}
-
 void	ft_print_lst(t_lst **a)
 {
-	t_lst *tmp;
+	t_lst	*tmp;
 
 	tmp = *a;
-	while(tmp)
+	while (tmp)
 	{
-		if(!tmp->next)
+		if (!tmp->next)
 		{
-			ft_putnbr_fd((tmp->nb), 1);	
-			ft_printf("\n");	
+			ft_putnbr_fd((tmp->nb), 1);
+			ft_printf("\n");
 			return ;
 		}
 		else
@@ -63,27 +58,19 @@ int	main(int argc, char **argv)
 	b = NULL;
 	i = 0;
 	if (argc < 2 || ft_check(arg_join(argv)) == 0)
-	{
 		ft_error();
-		return (0);
-	}
 	else
 	{
 		tab2 = ft_split(arg_join(argv), ' ');
 		if (ft_check_int(tab2) == 0)
-		{
 			ft_error();
-			return (0);
-		}
 		else
 		{
-			if(ft_create_lst(tab2, &a) == 0)
+			if (ft_create_lst(tab2, &a) == 0)
 				return (0);
-			ft_push_b(&a, &b);
+			ft_reverse_rotate_a(&a);
 			ft_printf("a\n");
 			ft_print_lst(&a);
-			ft_printf("b\n");
-			ft_print_lst(&b);
 		}
 	}
 }

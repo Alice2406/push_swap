@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:03:31 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/14 14:20:53 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/16 12:44:24 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_check_int(char **str)
 	i = 0;
 	while (str[i])
 	{
-		if(!ft_str_is_digit(str[i]))
+		if (!ft_str_is_digit(str[i]))
 			return (0);
 		j = 0;
 		while (str[i][j])

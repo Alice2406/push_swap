@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:18:05 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/14 15:33:44 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/16 12:44:09 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ int	ft_lstadd_back2(t_lst **lst, t_lst *new)
 	t_lst	*tmp;
 
 	tmp = (*lst);
-	if(!tmp)
+	if (!tmp)
 		(*lst) = new;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->nb == new->nb)
 		{
 			ft_error();
 			return (0);
 		}
-		else if(tmp->next == NULL)
+		else if (tmp->next == NULL)
 		{
 			tmp->next = new;
 			return (1);
@@ -70,7 +70,7 @@ int	ft_create_lst(char **tab, t_lst **a)
 	{
 		nb = ft_atol(tab[i]);
 		next = ft_lstnext(nb);
-		if(ft_lstadd_back2(a, next) == 0)
+		if (ft_lstadd_back2(a, next) == 0)
 			return (0);
 		i++;
 	}
