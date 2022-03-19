@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/16 12:43:30 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/19 17:53:39 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,11 @@ int	main(int argc, char **argv)
 		{
 			if (ft_create_lst(tab2, &a) == 0)
 				return (0);
-			ft_reverse_rotate_a(&a);
-			ft_printf("a\n");
-			ft_print_lst(&a);
+			ft_algo(&a, &b);
+//			ft_printf("a\n");
+//			ft_print_lst(&a);
+//			ft_printf("\nb\n");
+//			ft_print_lst(&b);
 		}
 	}
 }

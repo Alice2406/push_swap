@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:41:11 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/16 12:29:53 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/19 17:12:45 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	ft_rotate_a_and_b(t_lst **a, t_lst **b);
 t_lst	*ft_lstlast2(t_lst *lst);
 void	ft_reverse_rotate_b(t_lst **b);
 void	ft_reverse_rotate_a_and_b(t_lst **a, t_lst **b);
+void	ft_algo(t_lst **a, t_lst **b);
 
 #endif

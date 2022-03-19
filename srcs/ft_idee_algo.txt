@@ -1,0 +1,15 @@
+-trouver la mediane de la liste
+- >mediane va dans la liste b, le reste ne bouge pas de la liste a
+-premier de la liste a 
+-ft_push dans b 
+-deuxieme de la liste a
+-ft_push dans b
+-IF premier de la liste b < deuxieme de la liste b 
+	-ft_swap 
+ELSE
+	-do nothing
+TANT QUE (a)
+-prochain a 
+-Trouver emplacement dans b = n
+-rotate b * n IF n 
+-push dans b

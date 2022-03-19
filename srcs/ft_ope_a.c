@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:21:52 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/16 12:41:34 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/19 17:51:12 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_swap_a(t_lst **a)
 	(*a)->next = tmp->next;
 	tmp->next = (*a);
 	(*a) = tmp;
+	ft_printf("sa\n");
 }
 
 void	ft_push_a(t_lst **a, t_lst **b)
@@ -30,6 +31,7 @@ void	ft_push_a(t_lst **a, t_lst **b)
 		return ;
 	ft_lstadd_front2(a, (*b)->nb);
 	ft_lst_del_first(b);
+	ft_printf("pa\n");
 }
 
 void	ft_rotate_a(t_lst **a)
@@ -51,6 +53,7 @@ void	ft_rotate_a(t_lst **a)
 		}
 		tmp = tmp->next;
 	}
+	ft_printf("ra\n");
 }
 
 void	ft_reverse_rotate_a(t_lst **a)
@@ -60,4 +63,5 @@ void	ft_reverse_rotate_a(t_lst **a)
 	tmp = ft_lstlast2(*a);
 	ft_lstadd_front2(a, tmp->nb);
 	ft_lst_del_last(a);
+	ft_printf("rra\n");
 }
