@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/19 17:53:39 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/21 16:32:51 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	i = 0;
-	if (argc < 2 || ft_check(arg_join(argv)) == 0)
+	if (argc <= 2)
+		return (1);
+	if (ft_check(arg_join(argv)) == 0)
 		ft_error();
 	else
 	{
@@ -68,11 +70,16 @@ int	main(int argc, char **argv)
 		{
 			if (ft_create_lst(tab2, &a) == 0)
 				return (0);
-			ft_algo(&a, &b);
-//			ft_printf("a\n");
-//			ft_print_lst(&a);
-//			ft_printf("\nb\n");
-//			ft_print_lst(&b);
+			if (ft_check_lst(a) == 1)
+				return (1);
+			if (ft_lstsize_ps(a) < 4)
+				ft_few_arguments(&a);
+			else
+				ft_algo(&a, &b);
+			ft_printf("a\n");
+			ft_print_lst(&a);
+	//		ft_printf("\nb\n");
+	//		ft_print_lst(&b);
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:03:31 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/16 12:44:24 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/21 15:18:28 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,20 @@ int	ft_check_int(char **str)
 		if (nb > INT_MAX || nb < INT_MIN)
 			return (0);
 		i++;
+	}
+	return (1);
+}
+
+int	ft_check_lst(t_lst *a)
+{
+	while (a)
+	{
+		if ((a->next != NULL) && (a->nb < a->next->nb))
+			a = a->next;
+		else if (a->next == NULL)
+			return (1);
+		else
+			return (0);
 	}
 	return (1);
 }

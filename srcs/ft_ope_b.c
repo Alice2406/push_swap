@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:24 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/19 17:53:17 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/21 13:18:06 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_rotate_b(t_lst **b)
 		{
 			tmp->next = new;
 			ft_lst_del_first(b);
+			ft_printf("rb\n");
 			return ;
 		}
 		tmp = tmp->next;
