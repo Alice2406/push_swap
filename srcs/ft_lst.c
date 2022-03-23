@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:18:05 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/16 12:44:09 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/22 00:41:45 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,17 @@ t_lst	*ft_lstlast2(t_lst *lst)
 	while (lst)
 	{
 		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
+	}
+	return (NULL);
+}
+
+t_lst	*ft_lst_before_last(t_lst *lst)
+{
+	while (lst)
+	{
+		if (lst->next->next == NULL)
 			return (lst);
 		lst = lst->next;
 	}

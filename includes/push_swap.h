@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:41:11 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/21 15:50:10 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/22 00:19:15 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ void	ft_reverse_rotate_a_and_b(t_lst **a, t_lst **b);
 void	ft_algo(t_lst **a, t_lst **b);
 int		ft_check_lst(t_lst *a);
 void	ft_few_arguments(t_lst **a);
+int	ft_moyenne(t_lst *a);
+t_lst	*ft_lst_before_last(t_lst *lst);
 
 #endif
