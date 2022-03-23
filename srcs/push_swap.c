@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/21 23:59:40 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/23 15:44:49 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,10 @@ int	main(int argc, char **argv)
 			if (ft_lstsize_ps(a) < 4)
 				ft_few_arguments(&a);
 			else
-				ft_algo(&a, &b);
-			ft_printf("a\n");
-			ft_print_lst(&a);
+				ft_mediane(a);
+				//ft_algo(&a, &b);
+	//		ft_printf("a\n");
+	//		ft_print_lst(&a);
 	//		ft_printf("\nb\n");
 	//		ft_print_lst(&b);
 		}

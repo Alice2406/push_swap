@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:41:11 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/22 00:19:15 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/23 15:42:31 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ int		ft_check_lst(t_lst *a);
 void	ft_few_arguments(t_lst **a);
 int	ft_moyenne(t_lst *a);
 t_lst	*ft_lst_before_last(t_lst *lst);
+int	ft_mediane(t_lst *a);
 
 #endif
