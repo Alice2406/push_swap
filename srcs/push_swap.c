@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/23 17:59:11 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/24 00:04:47 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ int	main(int argc, char **argv)
 				ft_few_arguments(&a);
 			else
 				ft_algo(&a, &b);
-			ft_printf("a\n");
-			ft_print_lst(&a);
+	//		ft_printf("a\n");
+	//		ft_print_lst(&a);
 	//		ft_printf("\nb\n");
 	//		ft_print_lst(&b);
 		}
