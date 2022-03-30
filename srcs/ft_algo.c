@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 17:03:53 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/30 01:44:28 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/30 03:34:19 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_length_plssc(int *tab, int size, int **new_tab)
 	int	i;
 	int	j;
 
-	lis = malloc(sizeof(int) * size);
+	lis = malloc(sizeof(int) * (size + 1));
 	if (NULL == lis)
 		return (0);
 	lis[0] = 1;
@@ -91,7 +91,7 @@ int *ft_tab_plssc(int *tab, int max, int *lis)
 	int i;  
 	int *plssc;
 
-	plssc = malloc(sizeof(int) * max);
+	plssc = malloc(sizeof(int) * (max + 1));
 	i = 0;
 	while (lis[i] != max)
 		i++;

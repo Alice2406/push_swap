@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 21:57:07 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/30 02:43:56 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/30 04:01:14 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,10 @@ void	ft_compare_lst_tab(t_lst **a, t_lst **b, int *tab, int length)
 
 	//i = 1;
 	size = ft_lstsize_ps(*a);
-	ft_printf("size = %d\n", size);
-	for(int i = 1; i < length + 1; i++)
-		printf("tab[%d] = %d\n",i, tab[i]);
+	// ft_printf("size = %d\n", size);
 	i = 1;
 	while (size > 0)
 	{
-		if (size == 1 && tab[i] == (*a)->nb)
-			ft_printf("i'm the boss\n");
-		ft_printf("tab[%d]= %d\n", i, tab[i]);
 		if (tab[i] == (*a)->nb && i < length + 1)
 		{
 			i++;
