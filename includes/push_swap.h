@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:41:11 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/24 00:03:53 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/30 02:02:47 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include "libft.h"
+
+#include <libc.h> // to delete
 
 typedef struct s_lst
 {
@@ -53,5 +55,14 @@ int	ft_moyenne(t_lst *a);
 t_lst	*ft_lst_before_last(t_lst *lst);
 int	ft_mediane(t_lst *a);
 int	*ft_lst_to_tab(t_lst *a, int size);
+int *ft_tab_plssc(int *tab, int max, int *lis);
+void	ft_compare_lst_tab(t_lst **a, t_lst **b, int *tab, int length);
+
+
+/*
+**	ALGO
+*/
+
+int	ft_length_plssc(int *tab, int size, int **new_tab);
 
 #endif
