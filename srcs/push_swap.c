@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/30 02:06:59 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:52:44 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int	ft_lstsize_ps(t_lst *lst)
 	return (size);
 }
 
-#include <stdio.h>
 int	main(int argc, char **argv)
 {
 	char	**tab2;
@@ -77,10 +76,10 @@ int	main(int argc, char **argv)
 				ft_few_arguments(&a);
 			else
 				ft_algo(&a, &b);
-			// ft_printf("a\n");
-			// ft_print_lst(&a);
-			// ft_printf("\nb\n");
-			// ft_print_lst(&b);
+			 ft_printf("a\n");
+			 ft_print_lst(&a);
+			 ft_printf("\nb\n");
+			 ft_print_lst(&b);
 		}
 	}
 }
