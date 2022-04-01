@@ -6,12 +6,21 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 21:57:07 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/04/01 12:52:31 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:38:06 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void
+_print_list(t_lst **a,t_lst **b)
+{
+	ft_printf("\nLIST A\n");
+	ft_print_lst(a);
+	ft_printf("\nLIST B\n");
+	ft_print_lst(b);
+	ft_printf("\n\n");
+}
 
 void	ft_compare_lst_tab(t_lst **a, t_lst **b, int *tab, int length)
 {
@@ -40,10 +49,6 @@ void	ft_compare_lst_tab(t_lst **a, t_lst **b, int *tab, int length)
 			ft_push_b(a, b);
 		size--;
 	}
-	ft_printf("a\n");
-	ft_print_lst(a);
-	ft_printf("\nb\n");
-	ft_print_lst(b);
 }
 int	ft_lst_half_size(t_lst *a)
 {
@@ -60,12 +65,15 @@ int	ft_lst_half_size(t_lst *a)
 int ft_place_a(t_lst *a, int b)
 {
 	int i;
+	int size;
 	
+	size = ft_lstsize_ps(a);
 	i = 0;
-	while (b > a->nb)
+	while (size > 0 && b > a->nb)
 	{
 		i++;
 		a = a->next;
+		size--;
 	}
 	return (i);
 }
@@ -80,11 +88,10 @@ void	ft_insertion(t_lst **a,t_lst **b)
 	size = ft_lstsize_ps(*a);
 	while (*b)
 	{
-		ft_printf("size = %d\n", size);
 		half_size = ft_lst_half_size(*a);
-		ft_printf("half_size = %d size = %d\n", half_size, size);
 		place = ft_place_a(*a, (*b)->nb);
-		ft_printf("place = %d\n", place);
+		// ft_printf("place = %d - nnb = %d\n", place, (*b)->nb);
+		//_print_list(a, b);
 		reverse = place;
 		if (place == 0)
 			ft_push_a(a, b);
@@ -96,7 +103,7 @@ void	ft_insertion(t_lst **a,t_lst **b)
 				place--;
 			}
 			ft_push_a(a, b);
-			while (reverse >= 0)
+			while (reverse > 0)
 			{
 				ft_reverse_rotate_a(a);
 				reverse--;
@@ -106,6 +113,7 @@ void	ft_insertion(t_lst **a,t_lst **b)
 		{
 			place = size - place;
 			reverse = place;
+			// ft_printf("place = %d\n", place);
 			while (place > 0)
 			{
 				ft_reverse_rotate_a(a);
