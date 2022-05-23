@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:18:05 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/22 00:41:45 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:15:25 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ int	ft_lstadd_back2(t_lst **lst, t_lst *new)
 
 	tmp = (*lst);
 	if (!tmp)
+	{
 		(*lst) = new;
+		return (1);
+	}
 	while (tmp)
 	{
 		if (tmp->nb == new->nb)

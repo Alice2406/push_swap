@@ -5,106 +5,100 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 17:03:53 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/30 03:34:19 by aniezgod         ###   ########.fr       */
+/*   Created: 2022/05/15 13:58:48 by aniezgod          #+#    #+#             */
+/*   Updated: 2022/05/18 22:27:04 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_few_arguments(t_lst **a)
+void	ft_first_part(t_lst **a, t_lst **b, int med_sup)
 {
-	if (ft_lstsize_ps(*a) == 2 && ft_check_lst(*a) == 0)
-		ft_swap_a(a);
-	else if (ft_lstsize_ps(*a) == 3)
+	int	size;
+
+	size = ft_lstsize_ps(*a);
+	while (size != 0)
 	{
-		if ((*a)->nb < (*a)->next->nb && (*a)->next->nb
-			> (*a)->next->next->nb && (*a)->nb > (*a)->next->next->nb)
-			ft_reverse_rotate_a(a);
-		else if ((*a)->nb > (*a)->next->nb && (*a)->next->nb
-			< (*a)->next->next->nb && (*a)->nb > (*a)->next->next->nb)
+		if ((*a)->nb <= med_sup)
+			ft_push_b(a, b);
+		else
 			ft_rotate_a(a);
-		else if ((*a)->nb > (*a)->next->nb && (*a)->next->nb
-			< (*a)->next->next->nb && (*a)->nb < (*a)->next->next->nb)
-			ft_swap_a(a);
-		else if ((*a)->nb > (*a)->next->nb && (*a)->next->nb
-			> (*a)->next->next->nb && (*a)->nb > (*a)->next->next->nb)
+		size--;
+	}
+}
+
+int	ft_find_smallest(t_lst *b)
+{
+	int		smallest;
+	t_lst	*tmp;
+
+	tmp = b;
+	smallest = tmp->nb;
+	tmp = tmp->next;
+	while (tmp)
+	{
+		if (smallest > tmp->nb)
+			smallest = tmp->nb;
+		tmp = tmp->next;
+	}
+	return (smallest);
+}
+
+int	ft_find_biggest(t_lst *b)
+{
+	int		biggest;
+	t_lst	*tmp;
+
+	tmp = b;
+	biggest = tmp->nb;
+	tmp = tmp->next;
+	while (tmp)
+	{
+		if (biggest < tmp->nb)
+			biggest = tmp->nb;
+		tmp = tmp->next;
+	}
+	return (biggest);
+}
+
+void	ft_tri_part(t_lst **a, t_lst **b)
+{
+	int	smallest;
+	int	biggest;
+
+	while (ft_lstsize_ps(*b) != 0)
+	{
+		smallest = ft_find_smallest(*b);
+		biggest = ft_find_biggest(*b);
+		if (ft_compare_place(smallest, biggest, (*b)) == 0)
 		{
-			ft_swap_a(a);
-			ft_reverse_rotate_a(a);
+			ft_b_push(biggest, b);
+			ft_push_a(a, b);
 		}
 		else
 		{
-			ft_reverse_rotate_a(a);
-			ft_swap_a(a);
+			ft_b_push(smallest, b);
+			ft_push_a(a, b);
+			ft_rotate_a(a);
 		}
 	}
 }
 
-int	*ft_lst_to_tab(t_lst *a, int size)
+void	ft_algo(t_lst **a, t_lst **b)
 {
-	int	*tab;
-	int	i;
+	int	median;
+	int	median_sup;
+	int	median_inf;
 
-	tab = malloc(sizeof(int) * size);
-	i = 0;
-	while (size != 0)
-	{
-		tab[i] = a->nb;
-		i++;
-		a = a->next;
-		size--;
-	}
-	return (tab);
-}
-
-int	ft_length_plssc(int *tab, int size, int **new_tab)
-{
-	int	*lis;
-	int	i;
-	int	j;
-
-	lis = malloc(sizeof(int) * (size + 1));
-	if (NULL == lis)
-		return (0);
-	lis[0] = 1;
-	i = 0;
-	while (++i < size)
-	{
-		lis[i] = 1;
-		j = -1;
-		while (++j < i)
-			if (tab[i] > tab[j] && lis[i] < lis[j] + 1)
-				lis[i] = lis[j] + 1;
-	}
-	i = -1;
-	j = 0;
-	while (++i < size)
-		if (lis[i] > j)
-			j = lis[i];
-	(*new_tab) = lis;
-	return (j);
-}
-
-int *ft_tab_plssc(int *tab, int max, int *lis)
-{
-	int i;  
-	int *plssc;
-
-	plssc = malloc(sizeof(int) * (max + 1));
-	i = 0;
-	while (lis[i] != max)
-		i++;
-	plssc[max--] = tab[i];
-//	ft_printf("plssc[%d] = %d\n", (max + 1), plssc[max + 1]);
-	while (max > 0)
-	{
-		if (lis[i] == max)
-		{
-			plssc[max--] = tab[i];
-//			ft_printf("plssc[%d] = %d\n", (max + 1), plssc[max + 1]);
-		}
-		i--;
-	}
-	return (plssc);
+	median = ft_median(*a);
+	median_sup = half_median_sup(*a, median);
+	median_inf = half_median_inf(*a, median);
+	ft_first_part(a, b, median_sup);
+	ft_tri_part(a, b);
+	ft_between_part(a, b, median_sup, median);
+	ft_tri_part(a, b);
+	ft_between_part(a, b, median, median_inf);
+	ft_tri_part(a, b);
+	ft_finish_part(a, b, median_inf);
+	ft_tri_part2(a, b);
 }

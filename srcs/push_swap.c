@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/04/01 14:37:20 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:53:23 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,12 @@ int	ft_lstsize_ps(t_lst *lst)
 int	main(int argc, char **argv)
 {
 	char	**tab2;
-	int		i;
 	t_lst	*a;
 	t_lst	*b;
 
 	a = NULL;
 	b = NULL;
-	i = 0;
-	if (argc <= 2)
+	if (argc <= 1)
 		return (1);
 	if (ft_check(arg_join(argv)) == 0)
 		ft_error();
@@ -72,14 +70,8 @@ int	main(int argc, char **argv)
 				return (0);
 			if (ft_check_lst(a) == 1)
 				return (1);
-			if (ft_lstsize_ps(a) < 4)
-				ft_few_arguments(&a);
 			else
-				ft_algo(&a, &b);
-			//  ft_printf("a\n");
-			//  ft_print_lst(&a);
-			//  ft_printf("\nb\n");
-			//  ft_print_lst(&b);
+				ft_which_sorting(&a, &b);
 		}
 	}
 }

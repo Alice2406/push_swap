@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:41:11 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/30 02:02:47 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:47:30 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include "libft.h"
 
-#include <libc.h> // to delete
+# include <libc.h> // to delete
 
 typedef struct s_lst
 {
@@ -24,45 +24,87 @@ typedef struct s_lst
 	struct s_lst	*next;
 }	t_lst;
 
-int		ft_check(char *str);
-int		ft_error(void);
-int		ft_check_int(char **str);
-char	*arg_join(char **argv);
-t_lst	*ft_lstnext(int content);
-int		ft_create_lst(char **tab, t_lst **a);
-int		ft_lstsize_ps(t_lst *lst);
-void	ft_swap_a(t_lst **a);
-void	ft_swap_b(t_lst **b);
-void	ft_swap_a_and_b(t_lst **a, t_lst **b);
-void	ft_lstadd_front2(t_lst **lst, int nb);
-void	ft_push_b(t_lst **a, t_lst **b);
-void	ft_push_a(t_lst **a, t_lst **b);
-void	ft_lst_del_first(t_lst **lst);
-void	ft_print_lst(t_lst **a);
-t_lst	*ft_lstnew2(int nb);
-void	ft_rotate_a(t_lst **a);
-void	ft_reverse_rotate_a(t_lst **a);
-void	ft_lst_del_last(t_lst **lst);
-void	ft_rotate_b(t_lst **b);
-void	ft_rotate_a_and_b(t_lst **a, t_lst **b);
-t_lst	*ft_lstlast2(t_lst *lst);
-void	ft_reverse_rotate_b(t_lst **b);
-void	ft_reverse_rotate_a_and_b(t_lst **a, t_lst **b);
-void	ft_algo(t_lst **a, t_lst **b);
-int		ft_check_lst(t_lst *a);
-void	ft_few_arguments(t_lst **a);
-int	ft_moyenne(t_lst *a);
-t_lst	*ft_lst_before_last(t_lst *lst);
-int	ft_mediane(t_lst *a);
-int	*ft_lst_to_tab(t_lst *a, int size);
-int *ft_tab_plssc(int *tab, int max, int *lis);
-void	ft_compare_lst_tab(t_lst **a, t_lst **b, int *tab, int length);
-
-
 /*
-**	ALGO
+**	TO DELETE
 */
 
-int	ft_length_plssc(int *tab, int size, int **new_tab);
+void	ft_print_lst(t_lst **a);
+
+/*
+**	LISTES
+*/
+
+t_lst	*ft_lstnext(int content);
+t_lst	*ft_lstlast2(t_lst *lst);
+t_lst	*ft_lst_before_last(t_lst *lst);
+t_lst	*ft_lstnew2(int nb);
+int		ft_lstsize_ps(t_lst *lst);
+int		ft_lstadd_back2(t_lst **lst, t_lst *new);
+int		ft_create_lst(char **tab, t_lst **a);
+void	ft_lstadd_front2(t_lst **lst, int nb);
+void	ft_lst_del_first(t_lst **lst);
+void	ft_lst_del_last(t_lst **lst);
+
+/*
+**	CHECK ET ERROR
+*/
+
+int		ft_check(char *str);
+int		ft_check_int(char **str);
+int		ft_check_lst(t_lst *a);
+int		ft_error(void);
+char	*arg_join(char **argv);
+
+/*
+**	OPERATIONS
+*/
+
+void	ft_swap_a(t_lst **a);
+void	ft_push_a(t_lst **a, t_lst **b);
+void	ft_rotate_a(t_lst **a);
+void	ft_reverse_rotate_a(t_lst **a);
+void	ft_swap_b(t_lst **b);
+void	ft_push_b(t_lst **a, t_lst **b);
+void	ft_rotate_b(t_lst **b);
+void	ft_reverse_rotate_b(t_lst **b);
+void	ft_swap_a_and_b(t_lst **a, t_lst **b);
+void	ft_rotate_a_and_b(t_lst **a, t_lst **b);
+void	ft_reverse_rotate_a_and_b(t_lst **a, t_lst **b);
+
+/*
+**	ALGO FEW NB
+*/
+
+int		ft_lst_half_size(t_lst *a);
+int		ft_place_a(t_lst *a, int b);
+int		*ft_lst_to_tab(t_lst *a, int size);
+int		ft_length_plssc(int *tab, int size, int **new_tab);
+int		*ft_tab_plssc(int *tab, int max, int *lis);
+void	ft_which_sorting(t_lst **a, t_lst **b);
+void	ft_three_nb(t_lst **a);
+void	ft_insertion(t_lst **a, t_lst **b);
+void	ft_algo_for_5(t_lst **a, t_lst **b);
+void	ft_compare_lst_tab(t_lst **a, t_lst **b, int *tab, int length);
+void	ft_reverse(t_lst **a, t_lst **b);
+
+/*
+**	ALGO 
+*/
+
+void	ft_first_part(t_lst **a, t_lst **b, int med_sup);
+void	ft_tri_part(t_lst **a, t_lst **b);
+void	ft_algo(t_lst **a, t_lst **b);
+void	ft_between_part(t_lst **a, t_lst **b, int med_sup, int med_inf);
+void	ft_finish_part(t_lst **a, t_lst **b, int med_sup);
+void	ft_tri_part2(t_lst **a, t_lst **b);
+void	ft_b_push(int nb, t_lst **b);
+int		ft_find_biggest(t_lst *b);
+int		ft_find_smallest(t_lst *b);
+int		ft_find_place(t_lst *b, int nb);
+int		ft_rrb_or_rb(t_lst *b, int nb);
+int		ft_compare_place(int smallest, int biggest, t_lst *b);
+int		ft_median(t_lst *a);
+int		half_median_sup(t_lst *a, int median);
+int		half_median_inf(t_lst *a, int median);
 
 #endif

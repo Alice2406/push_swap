@@ -6,7 +6,7 @@
 #    By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/08 16:25:39 by aniezgod          #+#    #+#              #
-#    Updated: 2022/04/01 14:41:05 by aniezgod         ###   ########.fr        #
+#    Updated: 2022/05/18 23:01:18 by aniezgod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,13 @@ SRCS =	./srcs/push_swap.c \
 		./srcs/ft_ope_a_and_b.c \
 		./srcs/ft_lst2.c \
 		./srcs/ft_error.c \
+		./srcs/ft_three_nb_or_less.c \
+		./srcs/ft_algo2.c \
 		./srcs/ft_algo.c \
-		./srcs/ft_algo2.c
+		./srcs/ft_median.c \
+		./srcs/ft_place.c \
+		./srcs/ft_algo_few_nb.c \
+		./srcs/ft_algo_few_nb2.c \
 
 OBJS = ${SRCS:.c=.o}
 
