@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:41:11 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/05/23 17:47:30 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/05/23 20:54:16 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include "libft.h"
-
-# include <libc.h> // to delete
 
 typedef struct s_lst
 {
@@ -80,6 +78,7 @@ int		ft_place_a(t_lst *a, int b);
 int		*ft_lst_to_tab(t_lst *a, int size);
 int		ft_length_plssc(int *tab, int size, int **new_tab);
 int		*ft_tab_plssc(int *tab, int max, int *lis);
+void	ft_split_insertion(int place, int size, t_lst **a, t_lst **b);
 void	ft_which_sorting(t_lst **a, t_lst **b);
 void	ft_three_nb(t_lst **a);
 void	ft_insertion(t_lst **a, t_lst **b);

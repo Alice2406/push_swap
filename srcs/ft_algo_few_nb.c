@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 21:57:07 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/05/23 17:54:26 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/05/23 20:55:07 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,51 +40,46 @@ int	ft_place_a(t_lst *a, int b)
 	return (i);
 }
 
+void	ft_split_insertion(int place, int size, t_lst **a, t_lst **b)
+{
+	int	half_size;
+	int	reverse;
+
+	half_size = ft_lst_half_size(*a);
+	reverse = place;
+	if (place <= half_size)
+	{
+		while (place-- > 0)
+			ft_rotate_a(a);
+		ft_push_a(a, b);
+		while (reverse-- > 0)
+			ft_reverse_rotate_a(a);
+	}
+	else if (place > half_size)
+	{
+		place = size - place;
+		reverse = place;
+		while (place-- > 0)
+			ft_reverse_rotate_a(a);
+		ft_push_a(a, b);
+		while (reverse-- >= 0)
+			ft_rotate_a(a);
+	}
+}
+
 void	ft_insertion(t_lst **a, t_lst **b)
 {
 	int	place;
-	int	reverse;
-	int	half_size;
 	int	size;
 
 	size = ft_lstsize_ps(*a);
 	while (*b)
 	{
-		half_size = ft_lst_half_size(*a);
 		place = ft_place_a(*a, (*b)->nb);
-		reverse = place;
 		if (place == 0)
 			ft_push_a(a, b);
-		else if (place <= half_size)
-		{
-			while (place > 0)
-			{
-				ft_rotate_a(a);
-				place--;
-			}
-			ft_push_a(a, b);
-			while (reverse > 0)
-			{
-				ft_reverse_rotate_a(a);
-				reverse--;
-			}
-		}
-		else if (place > half_size)
-		{
-			place = size - place;
-			reverse = place;
-			while (place > 0)
-			{
-				ft_reverse_rotate_a(a);
-				place--;
-			}
-			ft_push_a(a, b);
-			while (reverse >= 0)
-			{
-				ft_rotate_a(a);
-				reverse--;
-			}
-		}
+		else
+			ft_split_insertion(place, size, a, b);
 		size++;
 	}
 }
