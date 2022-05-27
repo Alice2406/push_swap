@@ -107,7 +107,7 @@ void	ft_compare_lst_tab(t_lst **a, t_lst **b, int *tab, int length)
 			ft_rotate_a(a);
 			ft_rotate_a(a);
 		}
-		else if (tab[i] == (*a)->nb && i < length + 1)
+		else if (tab[i] == (*a)->nb && i < length)
 		{
 			i++;
 			ft_rotate_a(a);

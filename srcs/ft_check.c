@@ -73,6 +73,7 @@ int	ft_check_lst(t_lst *a)
 char	*arg_join(char **argv)
 {
 	char	*tab_arg;
+	char	*tmp_ptr;
 	int		i;
 
 	i = 2;
@@ -80,9 +81,15 @@ char	*arg_join(char **argv)
 		tab_arg = ft_strjoin(argv[1], " ");
 	while (argv[i])
 	{
+		tmp_ptr = tab_arg;
 		tab_arg = ft_strjoin(tab_arg, argv[i]);
+		free(tmp_ptr);
 		if (argv[i + 1] != NULL)
+		{
+			tmp_ptr = tab_arg;
 			tab_arg = ft_strjoin(tab_arg, " ");
+			free(tmp_ptr);
+		}
 		i++;
 	}
 	return (tab_arg);

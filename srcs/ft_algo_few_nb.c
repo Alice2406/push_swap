@@ -102,5 +102,8 @@ void	ft_algo_for_5(t_lst **a, t_lst **b)
 		plssc = ft_tab_plssc(tab, length_plssc, new_tab);
 		ft_compare_lst_tab(a, b, plssc, length_plssc);
 		ft_insertion(a, b);
+		free(plssc);
 	}
+	free(tab);
+	free(new_tab);
 }

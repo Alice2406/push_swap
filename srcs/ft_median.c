@@ -61,6 +61,7 @@ int	half_median_sup(t_lst *a, int median)
 	}
 	ft_lst_del_first(&median_sup);
 	med_sup = ft_median(median_sup);
+	lst_clear(&median_sup);
 	return (med_sup);
 }
 
@@ -84,5 +85,6 @@ int	half_median_inf(t_lst *a, int median)
 	}
 	ft_lst_del_first(&median_inf);
 	med_inf = ft_median(median_inf);
+	lst_clear(&median_inf);
 	return (med_inf);
 }

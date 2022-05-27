@@ -35,10 +35,14 @@ void	ft_lstadd_front2(t_lst **lst, int nb)
 
 void	ft_lst_del_first(t_lst **lst)
 {
+	t_lst *tmp_lst;
+
+	tmp_lst = (*lst); 
 	if ((*lst)->next)
 		*lst = (*lst)->next;
 	else
 		*lst = NULL;
+	free(tmp_lst);
 }
 
 void	ft_lst_del_last(t_lst **lst)
@@ -46,6 +50,7 @@ void	ft_lst_del_last(t_lst **lst)
 	int		i;
 	int		size;
 	t_lst	*tmp;
+	t_lst	*ptr_save;
 
 	size = ft_lstsize_ps(*lst);
 	i = 1;
@@ -55,5 +60,7 @@ void	ft_lst_del_last(t_lst **lst)
 		tmp = tmp->next;
 		i++;
 	}
+	ptr_save = tmp->next;
 	tmp->next = NULL;
+	free(ptr_save);
 }

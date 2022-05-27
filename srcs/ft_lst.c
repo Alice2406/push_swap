@@ -85,7 +85,10 @@ int	ft_create_lst(char **tab, t_lst **a)
 		nb = ft_atol(tab[i]);
 		next = ft_lstnext(nb);
 		if (ft_lstadd_back2(a, next) == 0)
+		{
+			free(next);
 			return (0);
+		}
 		i++;
 	}
 	return (1);

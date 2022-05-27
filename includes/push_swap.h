@@ -42,6 +42,7 @@ int		ft_create_lst(char **tab, t_lst **a);
 void	ft_lstadd_front2(t_lst **lst, int nb);
 void	ft_lst_del_first(t_lst **lst);
 void	ft_lst_del_last(t_lst **lst);
+void	lst_clear (t_lst **lst);
 
 /*
 **	CHECK ET ERROR
