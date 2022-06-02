@@ -47,8 +47,7 @@ int	ft_lstsize_ps(t_lst *lst)
 	return (size);
 }
 
-void
-strsfree (char **strs)
+void	strsfree (char **strs)
 {
 	int i;
 
@@ -58,7 +57,7 @@ strsfree (char **strs)
 	free(strs);
 }
 
-void lst_clear (t_lst **lst)
+void	lst_clear (t_lst **lst)
 {
 	t_lst *tmp;
 	t_lst	*tmp_to_free;
@@ -73,9 +72,29 @@ void lst_clear (t_lst **lst)
 	}
 }
 
+int	split_main(t_lst **a, t_lst **b, char *arg_ptr)
+{
+	char **tab;
+
+	tab = ft_split(arg_ptr, ' ');
+	if (ft_check_int(tab) == 0)
+		ft_error();
+	else
+	{
+		if (ft_create_lst(tab, a) == 0)
+		{
+			strsfree(tab);
+			return (1);
+		}
+		else if (ft_check_lst(*a) != 1)
+			ft_which_sorting(a, b);
+	}
+	strsfree(tab);
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
-	char	**tab2;
 	char	*arg_ptr;
 	t_lst	*a;
 	t_lst	*b;
@@ -88,25 +107,7 @@ int	main(int argc, char **argv)
 	if (ft_check(arg_ptr) == 0)
 		ft_error();
 	else
-	{
-		tab2 = ft_split(arg_ptr, ' ');
-		if (ft_check_int(tab2) == 0)
-			ft_error();
-		else
-		{
-			if (ft_create_lst(tab2, &a) == 0)
-			{
-				free(arg_ptr);
-				lst_clear(&a);
-				lst_clear(&b);
-				strsfree(tab2);
-				return (1);
-			}
-			else if (ft_check_lst(a) != 1)
-				ft_which_sorting(&a, &b);
-		}
-		strsfree(tab2);
-	}
+		split_main(&a, &b, arg_ptr);
 	free(arg_ptr);
 	lst_clear(&a);
 	lst_clear(&b);
