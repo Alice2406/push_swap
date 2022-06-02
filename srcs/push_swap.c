@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/05/23 17:53:23 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/06/02 19:32:21 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,24 @@ int	ft_lstsize_ps(t_lst *lst)
 	return (size);
 }
 
-void	strsfree (char **strs)
+void	strsfree(char **strs)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(strs[i] != NULL)
+	while (strs[i] != NULL)
 		free(strs[i++]);
 	free(strs);
 }
 
-void	lst_clear (t_lst **lst)
+void	lst_clear(t_lst **lst)
 {
-	t_lst *tmp;
+	t_lst	*tmp;
 	t_lst	*tmp_to_free;
-	
+
 	tmp_to_free = NULL;
 	tmp = (*lst);
-	while(tmp)
+	while (tmp)
 	{
 		tmp_to_free = tmp;
 		tmp = tmp->next;
@@ -74,7 +74,7 @@ void	lst_clear (t_lst **lst)
 
 int	split_main(t_lst **a, t_lst **b, char *arg_ptr)
 {
-	char **tab;
+	char	**tab;
 
 	tab = ft_split(arg_ptr, ' ');
 	if (ft_check_int(tab) == 0)
@@ -86,7 +86,7 @@ int	split_main(t_lst **a, t_lst **b, char *arg_ptr)
 			strsfree(tab);
 			return (1);
 		}
-		else if (ft_check_lst(*a) != 1)
+		else if (ft_check_lst(*a) == 0)
 			ft_which_sorting(a, b);
 	}
 	strsfree(tab);

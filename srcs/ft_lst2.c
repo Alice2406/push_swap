@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:33:07 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/03/16 12:45:24 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/06/02 17:14:31 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	ft_lstadd_front2(t_lst **lst, int nb)
 
 void	ft_lst_del_first(t_lst **lst)
 {
-	t_lst *tmp_lst;
+	t_lst	*tmp_lst;
 
-	tmp_lst = (*lst); 
+	tmp_lst = (*lst);
 	if ((*lst)->next)
 		*lst = (*lst)->next;
 	else

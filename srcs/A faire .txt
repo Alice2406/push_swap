@@ -1,4 +1,0 @@
-- enlever ft_print_lst  dans push_swap.c
-- couper la fonction ft_insertion (ft_algo_few_nb.c)
-- gerer les leaks et cas d'erreur 
-- passer le testeur 
