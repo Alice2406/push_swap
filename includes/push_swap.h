@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:41:11 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/06/16 18:48:20 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:49:59 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	ft_three_nb(t_lst **a);
 void	ft_algo_for_5(t_lst **a, t_lst **b);
 void	ft_which_sorting(t_lst **a, t_lst **b);
 void	ft_algo_for_6(t_lst **a, t_lst **b);
-void	ft_algo_for_6(t_lst **a, t_lst **b);cd 
+void	ft_algo_for_6(t_lst **a, t_lst **b);
 /*
 **	ALGO 
 */
