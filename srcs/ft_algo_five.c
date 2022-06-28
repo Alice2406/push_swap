@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:30:49 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/06/02 19:35:32 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:00:24 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,12 @@ void	ft_algo_for_5(t_lst **a, t_lst **b)
 		ft_three_nb(a);
 	ft_insertion_first(a, b);
 	ft_insertion_second(a, b);
+}
+
+void	ft_algo_for_4(t_lst **a, t_lst **b)
+{
+	ft_push_b(a, b);
+	if (ft_check_lst(*a) == 0)
+		ft_three_nb(a);
+	ft_insertion_first(a, b);
 }

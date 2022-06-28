@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:41:11 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/06/16 18:49:59 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/06/28 21:23:23 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int		ft_check_lst(t_lst *a);
 int		ft_error(void);
 char	*arg_join(char **argv);
 void	strsfree(char **strs);
+char	**check_zero(char **tab);
+char	*ft_zero_spe(char *tab);
 
 /*
 **	OPERATIONS
@@ -89,6 +91,8 @@ void	ft_algo_for_5(t_lst **a, t_lst **b);
 void	ft_which_sorting(t_lst **a, t_lst **b);
 void	ft_algo_for_6(t_lst **a, t_lst **b);
 void	ft_algo_for_6(t_lst **a, t_lst **b);
+void	ft_algo_for_4(t_lst **a, t_lst **b);
+
 /*
 **	ALGO 
 */

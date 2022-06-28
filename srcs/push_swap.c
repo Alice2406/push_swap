@@ -6,7 +6,7 @@
 /*   By: aniezgod <aniezgod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 13:27:36 by aniezgod          #+#    #+#             */
-/*   Updated: 2022/06/02 19:32:21 by aniezgod         ###   ########.fr       */
+/*   Updated: 2022/06/28 20:34:57 by aniezgod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int	split_main(t_lst **a, t_lst **b, char *arg_ptr)
 	char	**tab;
 
 	tab = ft_split(arg_ptr, ' ');
+	tab = check_zero(tab);
 	if (ft_check_int(tab) == 0)
 		ft_error();
 	else
